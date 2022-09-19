@@ -1,0 +1,19 @@
+:root{
+  color-scheme: only light;
+}
+body{
+  overflow-x:hidden;
+}
+.images{
+  padding: 40px 5vw 40px 5vw;
+}
+.albums{
+  padding:2%;
+  color:white;
+}
+.albums .album-content{
+  text-align: left;
+  background-color: black;
+  padding:5%;
+  height: 300px;
+}
