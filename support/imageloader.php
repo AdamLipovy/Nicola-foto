@@ -8,24 +8,20 @@
 
     $files = scandir($dir);
     $count = 0;
-    foreach ($files as $img) {
-        if (((substr_compare($img, '.png', -4, 4)=== 0) or (substr_compare($img, '.jpg', -4, 4)=== 0)) and ($img != 'logo.png')){
-        $count = $count + 1;
-          }
-          else{
-            $files = array_diff( $files, [$img] );
-          }
-    }
+    
+    $files = array_diff($files, array('.', '..'));
     
     foreach ($files as $img) {
-      list($width, $height) = getimagesize($dir."/".$img);
-      $resolution = $height / $width;
-      $col = [0,$columns[0]];
-      for($i=0;$i<4;$i++){
-        if($columns[$i]<$col[1]){$col = [$i,$columns[$i]];}
+      if($img != 'logo.jpg'){
+        list($width, $height) = getimagesize($dir."/".$img);
+        $resolution = $height / $width;
+        for($i=0;$i<4;$i++){
+          if($columns[$i]<$col[1]){$col = [$i,$columns[$i]];}
+        }
+        $col = array_search(min($columns), $columns);
+        array_push($imgplace[$col], $img);
+        $columns[$col] = $columns[$col] + $resolution;
       }
-      array_push($imgplace[$col[0]], $img);
-      $columns[$col[0]] = $columns[$col[0]] + $resolution;
     }
     for($i=0;$i<4;$i++){
             ?>

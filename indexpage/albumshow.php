@@ -110,7 +110,7 @@ img {vertical-align: middle; height: 100%;}
     if (file_exists($album."/logo.jpg")){
       $logoPath = $album."/logo.jpg";
     }
-    if (file_exists($album."/logo.png")){
+    else if (file_exists($album."/logo.png")){
       $logoPath = $album."/logo.png";
     }
     else{

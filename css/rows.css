@@ -46,13 +46,17 @@
   position: fixed;
   height: auto;
   top=5%;
-  max-width: 90%;
-  max-height: 90%;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(26, 26, 26, 0.48);
   z-index: 10;
 }
+.fullimg table{
+  width: 100vw;
+  height: 100vh;
+}
 
-.fullimg img{
-  position: relative;
+.fullimg table img{
   max-height: 90vh;
   max-width: 90vw;
 }

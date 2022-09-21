@@ -2,10 +2,11 @@ var lock = false
 function showimage(path){
   var put = document.getElementById("fullImg");
   put.className = "fullimg"
-  put.innerHTML = '<img src="' + path + '">';
+  put.innerHTML = '<table><td><img src="' + path + '"></td></table>';
   var background = document.getElementById("all")
   background.style.opacity = "0.2"
-  document.querySelector('body').css = "margin: 0; height: 100%; overflow: hidden";
+  background.style.overflow = "hidden"
+  document.querySelector('body').css = "margin: 0; height: 100%;";
   put.onclick = removeImage;
 }
 

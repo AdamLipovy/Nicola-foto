@@ -17,3 +17,11 @@ body{
   padding:5%;
   height: 300px;
 }
+div.slideshow-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div.slideshow-container img{
+
+}
