@@ -52,7 +52,7 @@ if(isset($_POST['deleteImage'])){
     $album = substr($files[$i], 0, -4);
     ?>
       <tr>
-        <td><input type="radio" id=<?=$album?>="selection" name="selected" value=<?=$album?>></td>        
+        <td><input required type="radio" id=<?=$album?>="selection" name="selected" value=<?=$album?>></td>        
         <td><label for=<?=$album?>><?=$album?></label></td>
       </tr>
     <?
@@ -76,7 +76,7 @@ if(isset($_POST['deleteImage'])){
           $album = trim($album,'$');
           foreach(array_diff(scandir("../images/".$album."/"), array(".", "..")) as $img){?>
             <tr>
-        <td><input type="radio" id="<?=$img?>" name="selectedImg" value=<?=$album."/".$img?>></td>
+        <td><input required type="radio" id="<?=$img?>" name="selectedImg" value=<?=$album."/".$img?>></td>
         <td><label for=<?=$img?>><?=$img?></label></td>
         </tr><?
           }

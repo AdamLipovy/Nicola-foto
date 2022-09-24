@@ -1,4 +1,5 @@
-<?php session_start(); /* Starts the session */
+<?php 
+session_start(); /* Starts the session */
 
 if(!isset($_SESSION['UserData']['Username'])){
         header("location:login.php");
@@ -22,7 +23,7 @@ function compressImage($source, $destinationLite, $destination, $quality) {
             $image = imagecreatefrompng($source); 
             break; 
         case 'image/gif': 
-            $image = imagecreatefromgif($source); 
+            $image = imagecreatefromgif($source);
             break; 
         default: 
             $image = imagecreatefromjpeg($source); 

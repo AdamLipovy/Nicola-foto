@@ -1,4 +1,5 @@
- <?php session_start(); /* Starts the session */
+ <?php 
+session_start(); /* Starts the session */
 
 $files = scandir("../pages");
 $files = array_merge(array_diff($files, array(".", "..")));
@@ -46,7 +47,7 @@ if(isset($_POST['Submit'])){
     if (!is_dir("../images/".$album)){
       mkdir("../images/".$album);
       mkdir("../imageslite/".$album);
-      header("Refresh:0");
+      // header("Refresh:0");
     }    
   }
   else {$msg = ("That album already exists!");}
@@ -76,7 +77,7 @@ if(isset($_POST['Submit'])){
         for ($i = 1; $i<=$count;$i++){
           $album = substr($files[$i-1],0,-4);
       ?><tr>
-        <td><input type="radio" id="<?=$album?>" name="pageTo" value="<?=$album?>"></td>        
+        <td><input type="radio" id="<?=$album?>" name="pageTo" value="<?=$album?>"required></td>        
         <td><label for="<?=$album?>"><?=$album?></label></td>
       </tr><?
       }
